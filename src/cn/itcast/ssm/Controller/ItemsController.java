@@ -3,12 +3,14 @@ package cn.itcast.ssm.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import cn.itcast.ssm.Service.ItemsService;
 import cn.itcast.ssm.po.ItemsCustom;
 
+@Controller
 public class ItemsController {
 	@Autowired
 	private ItemsService itemsService;
@@ -19,6 +21,7 @@ public class ItemsController {
 		List<ItemsCustom> itemsList = itemsService.findItemsList(null);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("itemsList",itemsList);
+		modelAndView.setViewName("items/itemsList");
 		return modelAndView;
 	}
 	
