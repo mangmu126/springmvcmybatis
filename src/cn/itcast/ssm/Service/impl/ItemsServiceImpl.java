@@ -2,6 +2,9 @@ package cn.itcast.ssm.Service.impl;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -41,6 +44,12 @@ public class ItemsServiceImpl implements ItemsService {
 		// TODO Auto-generated method stub
 		itemsCustom.setId(id);
 		itemsMapper.updateByPrimaryKeyWithBLOBs(itemsCustom);
+	}
+	@Override
+	public void haha(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 	
 
